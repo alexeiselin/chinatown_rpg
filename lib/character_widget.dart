@@ -7,23 +7,30 @@ List<String> images = [
   'images/character_icons/image 200.png'
 ];
 
-List<String> texts = [
+List<String> characterProperties = [
   'Google employee.\nLoves dumplings and work burn outs.',
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+];
+List <String> names = [
+  'Greg',
+  'Jannet',
+  'Kim',
+  'No name'
 ];
 
 int activePage = 0;
 
 double heightForImage = 240;
 
-Column slider(images, pagePosition, active) {
-  double margin = active ? 0 : 50;
+Column slider (images, pagePosition, active) {
+  double margin = active ? 0 : 25;
   return Column(
     children: [
+      Text(names [pagePosition]),
       AnimatedContainer(
-        height: active ? 140 : 70,
+        height: active ? 100 : 50,
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOutCubic,
         margin: EdgeInsets.only(top: margin),
@@ -39,7 +46,7 @@ Column slider(images, pagePosition, active) {
         alignment: Alignment.bottomCenter,
         child: active
             ? Text(
-                texts[pagePosition],
+                characterProperties[pagePosition],
                 textAlign: TextAlign.center,
               )
             : const SizedBox(),
@@ -48,20 +55,4 @@ Column slider(images, pagePosition, active) {
   );
 }
 
-// class CharacterCard extends StatefulWidget {
-//   const CharacterCard({Key? key}) : super(key: key);
-//
-//   @override
-//   State<CharacterCard> createState() => _CharacterCardState();
-// }
-//
-// class _CharacterCardState extends State<CharacterCard> {
-//   int _value = 0;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [],
-//     );
-//   }
-// }
+

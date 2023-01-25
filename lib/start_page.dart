@@ -1,3 +1,4 @@
+import 'package:chinatown_rpg/pick_character.dart';
 import 'package:flutter/material.dart';
 
 class StartPage extends StatefulWidget {
@@ -33,29 +34,40 @@ class _StartPageState extends State<StartPage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30.0,
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 100),
+              padding: const EdgeInsets.symmetric(horizontal: 90),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                       'We will walk you through a great experience of real New York Chinatown.',
                       textAlign: TextAlign.justify),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
-                  Text(
+                  const Text(
                     'Every Character is an NTF. Every time you level up, your NTF levels up.',
                     textAlign: TextAlign.justify,
                   ),
                   Expanded(
                     child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: Text(
-                        'PICK YOUR CHARACTER',
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                              const PickCharacter(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'PICK YOUR CHARACTER',
+                        ),
                       ),
                     ),
                   )

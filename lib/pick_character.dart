@@ -1,6 +1,8 @@
 import 'package:chinatown_rpg/character_widget.dart';
 import 'package:flutter/material.dart';
 
+
+
 class PickCharacter extends StatefulWidget {
   const PickCharacter({Key? key}) : super(key: key);
 
@@ -24,11 +26,11 @@ class _PickCharacterState extends State<PickCharacter> {
                 ? (555 / 222) * heightForImage
                 : double.infinity,
             child: PageView.builder(
-              // padEnds: false, // for start from the beginning of the screen
+               padEnds: true, // for start from the beginning of the screen
               physics: const BouncingScrollPhysics(),
               itemCount: images.length,
               pageSnapping: true,
-              controller: PageController(viewportFraction: 0.32),
+              controller: PageController(viewportFraction: 0.2),
               onPageChanged: (page) {
                 setState(
                   () {
@@ -38,7 +40,7 @@ class _PickCharacterState extends State<PickCharacter> {
               },
               itemBuilder: (context, pagePosition) {
                 bool active = pagePosition == activePage;
-                return slider(images, pagePosition, active);
+                return slider( images, pagePosition, active);
               },
             ),
           ),
