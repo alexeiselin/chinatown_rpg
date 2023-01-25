@@ -1,3 +1,4 @@
+import 'package:chinatown_rpg/pick_character.dart';
 import 'package:flutter/material.dart';
 import 'start_page.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: const StartPage(),
+      home: const PickCharacter(),
     );
   }
 }
