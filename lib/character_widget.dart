@@ -7,28 +7,23 @@ List<String> images = [
   'images/character_icons/image 200.png'
 ];
 
-List<String> characterProperties = [
+List<String> characterDescription = [
   'Google employee.\nLoves dumplings and work burn outs.',
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
 ];
-List <String> names = [
-  'Greg',
-  'Jannet',
-  'Kim',
-  'No name'
-];
+List<String> names = ['Greg', 'Jannet', 'Kim', 'No name'];
 
 int activePage = 0;
 
 double heightForImage = 240;
 
-Column slider (images, pagePosition, active) {
+Column slider(images, pagePosition, active) {
   double margin = active ? 0 : 25;
   return Column(
     children: [
-      Text(names [pagePosition]),
+      Text(names[pagePosition]),
       AnimatedContainer(
         height: active ? 100 : 50,
         duration: const Duration(milliseconds: 500),
@@ -46,7 +41,7 @@ Column slider (images, pagePosition, active) {
         alignment: Alignment.bottomCenter,
         child: active
             ? Text(
-                characterProperties[pagePosition],
+                characterDescription[pagePosition],
                 textAlign: TextAlign.center,
               )
             : const SizedBox(),
@@ -54,5 +49,3 @@ Column slider (images, pagePosition, active) {
     ],
   );
 }
-
-
