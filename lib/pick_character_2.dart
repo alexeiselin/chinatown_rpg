@@ -1,6 +1,8 @@
 import 'package:chinatown_rpg/character_widget.dart';
 import 'package:flutter/material.dart';
 
+import 'utilities.dart';
+
 class PickCharacter2 extends StatefulWidget {
   const PickCharacter2({Key? key}) : super(key: key);
 
@@ -10,15 +12,6 @@ class PickCharacter2 extends StatefulWidget {
 
 class _PickCharacter2State extends State<PickCharacter2> {
   String selectedCharacter = '1';
-
-  static const double baseWidth = 480.0;
-
-  double screenAwareSize(double size, BuildContext context) {
-    double drawingWidth = MediaQuery.of(context).size.width -
-        MediaQuery.of(context).padding.left -
-        MediaQuery.of(context).padding.right;
-    return size * drawingWidth / baseWidth;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +39,8 @@ class _PickCharacter2State extends State<PickCharacter2> {
                 child: Padding(
                   padding: EdgeInsets.only(
                     top: (selectedCharacter == '1')
-                        ? screenAwareSize(0.0, context)
-                        : screenAwareSize(30.0, context),
+                        ? Utilities.screenAwareSize(0.0, context)
+                        : Utilities.screenAwareSize(30.0, context),
                   ),
                   child: Column(
                     children: [
@@ -60,8 +53,8 @@ class _PickCharacter2State extends State<PickCharacter2> {
                       ),
                       AnimatedContainer(
                         height: (selectedCharacter == '1')
-                            ? screenAwareSize(140.0, context)
-                            : screenAwareSize(80.0, context),
+                            ? Utilities.screenAwareSize(140.0, context)
+                            : Utilities.screenAwareSize(80.0, context),
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeInOutCubic,
                         decoration: BoxDecoration(
@@ -101,14 +94,14 @@ class _PickCharacter2State extends State<PickCharacter2> {
                   children: [
                     AnimatedContainer(
                       height: (selectedCharacter == '2')
-                          ? screenAwareSize(140.0, context)
-                          : screenAwareSize(80.0, context),
+                          ? Utilities.screenAwareSize(140.0, context)
+                          : Utilities.screenAwareSize(80.0, context),
                       duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOutCubic,
                       margin: EdgeInsets.only(
                         top: (selectedCharacter == '2')
-                            ? screenAwareSize(0.0, context)
-                            : screenAwareSize(30.0, context),
+                            ? Utilities.screenAwareSize(0.0, context)
+                            : Utilities.screenAwareSize(30.0, context),
                       ),
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -146,14 +139,14 @@ class _PickCharacter2State extends State<PickCharacter2> {
                 children: [
                   AnimatedContainer(
                     height: (selectedCharacter == '3')
-                        ? screenAwareSize(115.0, context)
-                        : screenAwareSize(80.0, context),
+                        ? Utilities.screenAwareSize(115.0, context)
+                        : Utilities.screenAwareSize(80.0, context),
                     duration: const Duration(milliseconds: 500),
                     curve: Curves.easeInOutCubic,
                     margin: EdgeInsets.only(
                       top: (selectedCharacter == '3')
-                          ? screenAwareSize(0.0, context)
-                          : screenAwareSize(30.0, context),
+                          ? Utilities.screenAwareSize(0.0, context)
+                          : Utilities.screenAwareSize(30.0, context),
                     ),
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -189,14 +182,14 @@ class _PickCharacter2State extends State<PickCharacter2> {
                   children: [
                     AnimatedContainer(
                       height: (selectedCharacter == '4')
-                          ? screenAwareSize(120.0, context)
-                          : screenAwareSize(80.0, context),
+                          ? Utilities.screenAwareSize(120.0, context)
+                          : Utilities.screenAwareSize(80.0, context),
                       duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOutCubic,
                       margin: EdgeInsets.only(
                         top: (selectedCharacter == '4')
-                            ? screenAwareSize(0.0, context)
-                            : screenAwareSize(30.0, context),
+                            ? Utilities.screenAwareSize(0.0, context)
+                            : Utilities.screenAwareSize(30.0, context),
                       ),
                       decoration: BoxDecoration(
                         image: DecorationImage(
